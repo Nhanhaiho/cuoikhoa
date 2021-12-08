@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pomodoro app</title>
-    
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -18,8 +18,12 @@
       <div class="form-box">
         <div class="button-change-login">
           <div id="btn-change"></div>
-          <button type="button" id="btn-switch-login" class="toggle-btn">Login</button>
-          <button type="button" id="btn-switch-register" class="toggle-btn">Register</button>
+          <button type="button" id="btn-switch-login" class="toggle-btn">
+            Login
+          </button>
+          <button type="button" id="btn-switch-register" class="toggle-btn">
+            Register
+          </button>
         </div>
         <!-- form login -->
         <form id="login" class="input-group">
@@ -27,23 +31,21 @@
             type="text"
             class="input-field"
             placeholder="User Name or email"
-           
           />
-          <input
-            type="text"
-            class="input-field"
-            placeholder="Enter password"
-            
-          />
+          <input type="text" class="input-field" placeholder="Enter password" />
           <button type="submit" class="submit-btn">Log in</button>
-         <hr>
-         <p class="another-sign-option">OR</p>
-         <!-- button sign in với gg và sign in với facebook ở đây nha Quyền -->
-         <button id="gg-signin">Sign in with <i class="fab fa-google"></i></button>
-             <button id="fb-signin">Sign in with <i class="fab fa-facebook"></i></button>
+          <hr />
+          <p class="another-sign-option">OR</p>
+          <!-- button sign in với gg và sign in với facebook ở đây nha Quyền -->
+          <button id="gg-signin">
+            Sign in with <i class="fab fa-google"></i>
+          </button>
+          <button id="fb-signin">
+            Sign in with <i class="fab fa-facebook"></i>
+          </button>
         </form>
-        
-         <!-- form register -->
+
+        <!-- form register -->
         <form id="register" class="input-group">
           <input
             type="text"
@@ -51,12 +53,7 @@
             placeholder="User Name"
             required
           />
-          <input
-            type="text"
-            class="input-field"
-            placeholder="Email"
-            required
-          />
+          <input type="text" class="input-field" placeholder="Email" required />
           <input
             type="text"
             class="input-field"
@@ -65,9 +62,7 @@
           />
           <button type="submit" class="submit-btn">Register</button>
         </form>
-       
       </div>
-      
     </div>
     <!-- phần thành viên -->
     <div class="prolife-container">
@@ -117,6 +112,27 @@
         <button class="btn-contact">Contact Me</button>
       </div>
     </div>
+    <!-- phan footer -->
+    <footer>
+      <div class="footer-row">
+        <div class="footer-icons">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-snapchat"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-facebook"></i>
+        </div>
+
+        <ul class="footer-menu">
+          <li>Home</li>
+          <li>Services</li>
+          <li>About</li>
+          <li>Terms</li>
+          <li>Privacy Policy</li>
+        </ul>
+
+        <p class="footer-copyright">Mindx © 2021</p>
+      </div>
+    </footer>
     <script src="./pomodoro/js/login.js"></script>
   </body>
 </html>
