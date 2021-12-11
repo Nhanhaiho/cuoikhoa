@@ -230,3 +230,49 @@ footer {
   margin-top: 10px;
   text-align: center;
 }
+/* phần header */
+header{
+  width: 100%;
+  height: 100px;
+    background:#24252A;
+   display:flex;
+   justify-content:flex-end;
+   align-items:center;
+   padding:30px 20px;
+}
+header h2{
+  color: #edf0f1;
+  cursor: pointer;
+  margin-right: auto;
+  
+}
+.nav-links{
+  list-style:none;
+}
+.nav-links li{
+  color: #edf0f1;
+  display:inline-block;
+  padding:0 20px;
+  cursor: pointer;
+}
+.nav-links li a{
+  transition:all 0.3s ease 0s;
+}
+.nav-links li a:hover{
+  color:#0088a9;
+}
+header button {
+  margin-left: 20px;
+  
+  padding:9px 25px;
+  background-color: rgba(0,136,169,1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+   transition:all 0.3s ease 0s;
+   color: #edf0f1;
+}
+header button:hover{
+  background-color: rgba(0,136,169,0.8);
+}
+
