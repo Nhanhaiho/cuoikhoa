@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(217, 85, 80);
+  padding: 0 12px;
+}
+header {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12px;
+  max-width: 620px;
+  align-items: center;
+  margin: 0 auto;
+}
+.tick-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+}
+header h1 a {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+.nav-button {
+  display: flex;
+}
+.nav-button li {
+  list-style: none;
+}
+.nav-button li button {
+  border: none;
+  width: 90px;
+  height: 35px;
+  padding: 8px 12px;
+  color: white;
+  background: none rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.nav-button li button i {
+  width: 16px;
+}
+.fa-cog,
+.fa-sign-out-alt {
+  margin-right: 1px;
+}
+hr {
+  max-width: 620px;
+  margin: 0 auto;
+
+  margin-bottom: 40px;
+}
+/* phan timer form */
+.timer-form {
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 480px;
+  height: 310px;
+  margin: 0 auto;
+}
+.time-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.switch-time-btn {
+  border: none;
+  margin: 0;
+  border-radius: 4px;
+  font-family: ArialRounded;
+  font-size: 16px;
+  padding: 2px 12px;
+  height: 28px;
+  cursor: pointer;
+  background: none;
+  box-shadow: none;
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.time-string {
+  font-size: 120px;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+  color: white;
+}
+.btn-pause button {
+  width: 200px;
+  height: 55px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 30px;
+  box-shadow: rgb(235 235 235) 0px 6px 0px;
+}
+.btn-pause {
+  margin-top: 20px;
+  text-align: center;
+}
+.time-des {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: white;
+  font-weight: 100;
+  overflow-wrap: break-word;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timer</title>
+
+    <link rel="stylesheet" href="/pomodoro/css/pomodoro.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>
+          <a>
+            <img
+              src="https://pomofocus.io/icons/icon-white.png"
+              alt="tick-icon"
+              class="tick-icon"
+            />
+            Pomofocus
+          </a>
+        </h1>
+        <ul class="nav-button">
+          <li>
+            <button><i class="fas fa-cog"></i>Settings</button>
+          </li>
+          <li class="logout-btn">
+            <button><i class="fas fa-sign-out-alt"></i>log out</button>
+          </li>
+        </ul>
+      </header>
+        <hr>
+        <div class="timer-form">
+          <div class="time-button">
+            <button class="switch-time-btn">Pomodoro</button>
+            <button class="switch-time-btn">Short break</button>
+            <button class="switch-time-btn">Long break</button>
+          </div>
+        <div class="time-string">25:00</div>
+        <div class="btn-pause">
+          <button style="color:rgb(217, 85, 80)">Start</button>
+        </div>
+    </div>
+    <p class="time-des">Time to focus!</p>
+  </body>
+</html>

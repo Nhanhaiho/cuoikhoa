@@ -201,7 +201,7 @@ hr {
 /* phần footer */
 footer {
   width: 100%;
-  height:250px;
+  height: 250px;
   background: linear-gradient(to right, #ff5f6d, #ffc371);
   display: flex;
   justify-content: center;
@@ -231,48 +231,47 @@ footer {
   text-align: center;
 }
 /* phần header */
-header{
+header {
   width: 100%;
   height: 100px;
-    background:#24252A;
-   display:flex;
-   justify-content:flex-end;
-   align-items:center;
-   padding:30px 20px;
+  background: #24252a;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 20px;
+  overflow: hidden;
 }
-header h2{
+header h2 {
   color: #edf0f1;
   cursor: pointer;
   margin-right: auto;
-  
 }
-.nav-links{
-  list-style:none;
+.nav-links {
+  list-style: none;
 }
-.nav-links li{
+.nav-links li {
   color: #edf0f1;
-  display:inline-block;
-  padding:0 20px;
+  display: inline-block;
+  padding: 0 20px;
   cursor: pointer;
 }
-.nav-links li a{
-  transition:all 0.3s ease 0s;
+.nav-links li a {
+  transition: all 0.3s ease 0s;
 }
-.nav-links li a:hover{
-  color:#0088a9;
+.nav-links li a:hover {
+  color: #0088a9;
 }
 header button {
   margin-left: 20px;
-  
-  padding:9px 25px;
-  background-color: rgba(0,136,169,1);
+
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
   border: none;
   border-radius: 50px;
   cursor: pointer;
-   transition:all 0.3s ease 0s;
-   color: #edf0f1;
+  transition: all 0.3s ease 0s;
+  color: #edf0f1;
 }
-header button:hover{
-  background-color: rgba(0,136,169,0.8);
+header button:hover {
+  background-color: rgba(0, 136, 169, 0.8);
 }
-

@@ -1,6 +1,6 @@
+// thay đổi qua lại giữa register với login
 const btnLogin = document.getElementById('btn-switch-login');
 const btnRegister = document.getElementById('btn-switch-register');
-
 const formLoginEl = document.getElementById('login')
 const formRegisterEl = document.getElementById('register')
 
@@ -15,3 +15,4 @@ btnLogin.addEventListener('click', () => {
     formRegisterEl.style.left = "450px";
      btnChangEl.style.left ="0px"
 })
+// 
