@@ -13,7 +13,7 @@
     />
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="container">
       <header>
         <h1>
           <a>
@@ -34,18 +34,21 @@
           </li>
         </ul>
       </header>
-        <hr>
-        <div class="timer-form">
-          <div class="time-button">
-            <button class="switch-time-btn">Pomodoro</button>
-            <button class="switch-time-btn">Short break</button>
-            <button class="switch-time-btn">Long break</button>
-          </div>
-        <div class="time-string">25:00</div>
-        <div class="btn-pause">
-          <button style="color:rgb(217, 85, 80)">Start</button>
+      <hr class="hr-header" />
+
+      <div class="timer-form">
+        <div class="time-button">
+          <button class="switch-time-btn" id="pomodoro-time">Pomodoro</button>
+          <button class="switch-time-btn" id="short-break">Short break</button>
+          <button class="switch-time-btn" id="long-break">Long break</button>
         </div>
+        <div class="time-string" id="time">25:00</div>
+        <div class="btn-pause">
+          <button style="color: rgb(217, 85, 80)" id="Start-btn">Start</button>
+        </div>
+      </div>
+      <p id="time-des">Time to focus!</p>
     </div>
-    <p class="time-des">Time to focus!</p>
+    <script src="/pomodoro/js/pomodoro.js"></script>
   </body>
 </html>
