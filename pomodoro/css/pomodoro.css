@@ -93,9 +93,12 @@ header h1 a {
   margin-top: 20px;
   text-align: center;
   color: white;
+  display: flex;
+  justify-content: center;
+
 }
 .btn-pause button {
-  width: 200px;
+  width: 140px;
   height: 55px;
   border: none;
   border-radius: 5px;
@@ -107,6 +110,8 @@ header h1 a {
 .btn-pause {
   margin-top: 20px;
   text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 #time-des {
   text-align: center;
@@ -116,4 +121,11 @@ header h1 a {
   font-weight: 100;
   overflow-wrap: break-word;
 }
-
+/* to do list */
+.todo-list{
+  width:200px;
+  height:200px;
+  border: 2px solid red;
+  margin: 0 auto;
+  margin-top:20px;
+}

@@ -42,12 +42,20 @@
           <button class="switch-time-btn" id="short-break">Short break</button>
           <button class="switch-time-btn" id="long-break">Long break</button>
         </div>
-        <div class="time-string" id="time">25:00</div>
+        <div class="time-string" id="time">
+          <p id='w-minute'>25</p><p class="semi-colon">:</p>
+          <p id="w-second">00</p>
+        </div>
         <div class="btn-pause">
           <button style="color: rgb(217, 85, 80)" id="Start-btn">Start</button>
+            <button style="color: rgb(217, 85, 80)" id="Reset-btn">Reset</button>
+             <button style="color: rgb(217, 85, 80)" id="Stop-btn">Stop</button>
         </div>
       </div>
       <p id="time-des">Time to focus!</p>
+      <div class="todo-list">
+        <h2>POMODORO list</h2>
+      </div>
     </div>
     <script src="/pomodoro/js/pomodoro.js"></script>
   </body>
