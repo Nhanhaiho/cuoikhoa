@@ -1,6 +1,3 @@
-<<<<<<< HEAD:pomodoro/js/index.js
-// thay đổi qua lại giữa register với login
-=======
 import { GoogleAuthProvider, getAuth, signInWithPopup, signInWithRedirect } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 
 import { saveUserToLocalStorage, getUserFromLocalStorage } from "./firebase-helper.js";
@@ -44,7 +41,6 @@ function loginWithGgl(){
       });
 }
 
->>>>>>> 4271c7cf78bd3ee38a949191c043ab92a76d8917:pomodoro/js/login.js
 const btnLogin = document.getElementById('btn-switch-login');
 const btnRegister = document.getElementById('btn-switch-register');
 const formLoginEl = document.getElementById('login')
@@ -65,9 +61,4 @@ btnLogin.addEventListener('click', () => {
     formRegisterEl.style.left = "450px";
      btnChangEl.style.left ="0px"
 })
-<<<<<<< HEAD:pomodoro/js/index.js
 // 
-=======
-
-btnGglLogin.addEventListener('click', loginWithGgl())
->>>>>>> 4271c7cf78bd3ee38a949191c043ab92a76d8917:pomodoro/js/login.js
