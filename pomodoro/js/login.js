@@ -73,7 +73,8 @@ function loginWithGgl(){
 
 function validateForm(){
     console.log('hellow')
-    let x = document.forms[register].value;
+    let x = document.forms[register];
+    console.log(x);
     if (x == ""){
         alert("Vui lòng điền đầy đủ form");
         return false;
@@ -86,8 +87,8 @@ const btnRegister = document.getElementById('btn-switch-register');
 const btnGglLogin = document.getElementById('gg-signin')
 const registerForm = document.getElementById('register');
 
-registerForm.addEventListener('submit', validateForm())
 
+btnGglLogin.addEventListener('click', loginWithGgl)
+//btnRegister.addEventListener('click',() => validateForm() ,)
 
-//btnGglLogin.addEventListener('click', loginWithGgl())
-//btnRegister.addEventListener('click', registerWithEmail(), validateForm())
+registerForm.addEventListener('submit', validateForm)
