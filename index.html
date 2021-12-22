@@ -36,13 +36,14 @@
           </button>
         </div>
         <!-- form login -->
-        <form id="login" class="input-group">
+        <form id="login" class="input-group" onsubmit="return validateForm()">
           <input
             type="text"
             class="input-field"
             placeholder="User Name or email"
+            required
           />
-          <input type="text" class="input-field" placeholder="Enter password" />
+          <input type="text" class="input-field" placeholder="Enter password" required/>
           <button type="submit" class="submit-btn">Log in</button>
           <hr />
           <p class="another-sign-option">OR</p>
@@ -61,14 +62,12 @@
             type="text"
             class="input-field"
             placeholder="User Name"
-            required
           />
-          <input type="text" class="input-field" placeholder="Email" required />
+          <input type="text" class="input-field" placeholder="Email" />
           <input
             type="text"
             class="input-field"
             placeholder="Enter password"
-            required
           />
           <button type="submit" class="submit-btn">Register</button>
         </form>
@@ -143,7 +142,10 @@
         <p class="footer-copyright">Mindx © 2021</p>
       </div>
     </footer>
+    <!--EXECUTE JS CODE HERE-->
     <script type="module" src='./pomodoro/js/firebase-config.js'></script>
+    <script type="module" src="./pomodoro/js/index.js"></script>
     <script type="module" src="./pomodoro/js/login.js"></script>
+
   </body>
 </html>
