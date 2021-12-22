@@ -95,7 +95,6 @@ header h1 a {
   color: white;
   display: flex;
   justify-content: center;
-
 }
 .btn-pause button {
   width: 140px;
@@ -122,10 +121,73 @@ header h1 a {
   overflow-wrap: break-word;
 }
 /* to do list */
-.todo-list{
-  width:200px;
-  height:200px;
-  border: 2px solid red;
+.todo-list {
+  width: 24rem;
+  height: 24rem;
+  border: none;
   margin: 0 auto;
-  margin-top:20px;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow: auto;
+}
+.todo-list h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+}
+#todo-input {
+  outline: none;
+  height: 40px;
+  padding-left: 10px;
+  width: 80%;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.contain-input {
+  width: 100%;
+  padding-top: 20px;
+}
+#todo-add-btn {
+  height: 40px;
+  width: 15%;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+#todo-list-ul {
+  list-style: none;
+}
+#todo-list-ul li {
+  font-size: 20px;
+  width: 80%;
+  height: 50px;
+  display: flex;
+  padding: 12px;
+  margin: 20px 0;
+  border-radius: 4px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  list-style: none;
+  background-color: white;
+  overflow: auto;
+}
+.fa-trash {
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+  margin-top: 38px;
+  margin-right: 25px;
+}
+.done {
+  text-decoration: line-through;
 }
