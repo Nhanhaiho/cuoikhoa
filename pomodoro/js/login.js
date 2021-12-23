@@ -14,6 +14,10 @@ import {
 const auth = getAuth();
 
 function registerWithEmail(){
+    let email = document.forms["register"].value;
+    let password = document.forms["register"].value;
+    let userName = document.forms["register"]
+
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in 
@@ -81,12 +85,16 @@ function validateForm(){
     }
 }
 
+function handleError(msg, code, when){
+    let x = document.getElementById('errorMsg');
+    
+    
+}
 
-const btnLogin = document.getElementById('btn-switch-login');
-const btnRegister = document.getElementById('btn-switch-register');
+//DOM hell
 const btnGglLogin = document.getElementById('gg-signin')
 const registerForm = document.getElementById('register');
-
+const errorMessagelist =  //Make a Firebase list
 
 btnGglLogin.addEventListener('click', loginWithGgl)
 //btnRegister.addEventListener('click',() => validateForm() ,)
