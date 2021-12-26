@@ -57,7 +57,7 @@
         </form>
 
         <!-- form register -->
-        <form id="register" class="input-group">
+        <form id="register" class="input-group" >
           <input
             type="text"
             class="input-field"
@@ -69,10 +69,11 @@
             class="input-field"
             placeholder="Enter password"
           />
-          <button type="submit" class="submit-btn">Register</button>
+          <button type="button" class="submit-btn" id="RegSubmit">Register</button>
         </form>
+        <div id="errorMsg"></div>
       </div>
-      <p id="errorMsg"></p>
+
     </div>
     <!-- phần thành viên -->
     <div class="prolife-container">
@@ -147,6 +148,5 @@
     <script type="module" src='./pomodoro/js/firebase-config.js'></script>
     <script type="module" src="./pomodoro/js/index.js"></script>
     <script type="module" src="./pomodoro/js/login.js"></script>
-
   </body>
 </html>

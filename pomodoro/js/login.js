@@ -14,10 +14,6 @@ import {
 const auth = getAuth();
 
 function registerWithEmail(){
-    let email = document.forms["register"].value;
-    let password = document.forms["register"].value;
-    let userName = document.forms["register"]
-
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in 
@@ -75,28 +71,65 @@ function loginWithGgl(){
       });
 }
 
+//copy pasterino from https://www.w3resource.com/javascript/form/email-validation.php
+const emailRegex =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
 function validateForm(){
-    console.log('hellow')
-    let x = document.forms[register];
-    console.log(x);
-    if (x == ""){
-        alert("Vui lòng điền đầy đủ form");
+    //Get info from forms
+    let userName = document.forms['register'][0].value;
+    let email = document.forms['register'][1].value;
+    let password = document.forms['register'][2].value;
+
+    //Handle error messages
+    let errorMessage = document.getElementById('errorMsg')
+    if (typeof myTimeout != "undefined") clearTimeout(myTimeout);
+    console.log(`
+        userName: ${userName}
+        email: ${email}
+        password: ${password}
+    `)
+    
+    if (userName === "" || email === "" || password === ""){
+        alert("Vui lòng điền đầy đủ thông tin");
+        errorMessage.innerHTML = "Vui lòng điền đầy đủ thông tin"
+        console.log(errorMessage)
+        let myTimeout = setTimeout(errorMessage.innerHTML = "", 5000)
         return false;
+    } else if (!email.match(emailRegex)) {
+        alert("email ko hợp lệ")
+        return false;
+    } else {
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                console.log(user)
+                saveUserToLocalStorage(user);
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ..
+                //Basic logging
+                alert(`${errorMessage}`)
+                console.log(`
+                    errorCode: ${errorCode}
+                    errorMsg: ${errorMessage}
+                `)
+            });
     }
 }
 
-function handleError(msg, code, when){
-    let x = document.getElementById('errorMsg');
-    
-    
-}
+
 
 //DOM hell
 const btnGglLogin = document.getElementById('gg-signin')
 const registerForm = document.getElementById('register');
+const registerFormBtn = document.getElementById('RegSubmit');
 const errorMessagelist =  //Make a Firebase list
 
 btnGglLogin.addEventListener('click', loginWithGgl)
-//btnRegister.addEventListener('click',() => validateForm() ,)
+registerFormBtn.addEventListener('click', validateForm)
+//registerFormBtn.addEventListener('submit', validateForm)
 
-registerForm.addEventListener('submit', validateForm)
