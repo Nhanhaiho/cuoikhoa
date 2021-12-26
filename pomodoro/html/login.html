@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/pomodoro/css/login.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h2>Pomodoro Login</h2>
+      <!-- <p>Login</p> -->
+    </header>
+    <div class="login-container">
+      <div class="form-box">
+        <div class="button-change-login">
+          <div id="btn-change"></div>
+          <button type="button" id="btn-switch-login" class="toggle-btn">
+            Login
+          </button>
+          <button type="button" id="btn-switch-register" class="toggle-btn">
+            Register
+          </button>
+        </div>
+        <!-- form login -->
+        <form id="login" class="input-group">
+          <input
+            type="text"
+            class="input-field"
+            placeholder="User Name or email"
+          />
+          <input type="text" class="input-field" placeholder="Enter password" />
+          <button type="submit" class="submit-btn">Log in</button>
+          <div class="another-sign-option">
+            <div class="hr"></div>
+            <div>or</div>
+            <div class="hr"></div>
+          </div>
+          <!-- button sign in với gg và sign in với facebook ở đây nha Quyền -->
+          <button id="gg-signin">
+            Sign in with Google<img
+              src="https://pomofocus.io/icons/g-logo.png"
+            />
+          </button>
+          <button id="fb-signin">
+            Sign in with Facebook<img
+              src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
+            />
+          </button>
+        </form>
+
+        <!-- form register -->
+        <form id="register" class="input-group">
+          <input
+            type="text"
+            class="input-field"
+            placeholder="User Name"
+            required
+          />
+          <input type="text" class="input-field" placeholder="Password" required />
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Confirm Password"
+            required
+          />
+          <button type="submit" class="submit-btn">Register</button>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="/pomodoro/js/firebase-config.js"></script>
+    <script type="module" src="/pomodoro/js/login.js"></script>
+    <script type="module" src="/pomodoro/js/index.js"></script>
+  </body>
+</html>
