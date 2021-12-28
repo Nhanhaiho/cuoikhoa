@@ -156,13 +156,10 @@ function removeTodo() {
         })
     }
 }
-
-
 function reRenderTodos() {
      ulEl.innerHTML = "";
     renderTodos(todos)
 }
-
 btnaddEl.addEventListener('click', () => {
     if (inputEl.value !== "") {
         const newTodo = {
@@ -171,8 +168,6 @@ btnaddEl.addEventListener('click', () => {
         id:todos.length+1
     }
     todos.push(newTodo);
-    
-  
     inputEl.value = "";
      reRenderTodos()
     } else {
@@ -182,3 +177,8 @@ btnaddEl.addEventListener('click', () => {
 
 renderTodos(todos)
 liTodos()
+
+const loginBtnSwitchPage = document.getElementById('login-btn');
+loginBtnSwitchPage.addEventListener('click', () => {
+    window.location.href='/pomodoro/html/login.html'
+})
