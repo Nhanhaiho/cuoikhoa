@@ -7,8 +7,7 @@
     <title>Timer</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="/pomodoro/css/pomodoro.css" />
-    <link rel="stylesheet" href="/pomodoro/css/musicplayer.css" />
-    <link rel="stylesheet" href="/pomodoro/css/musicplayer.css" />
+   
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -37,7 +36,7 @@
             <a href="#MEMBERS"><i class="fas fa-users"></i>Members</a>
           </li>
           <li>
-            <a href="#MUSIC"><i class="fas fa-music"></i>Music</a>
+           <a href="#MUSIC"><i class="fas fa-music"></i>Music</a>
           </li>
         </ul>
       </div>
@@ -67,7 +66,9 @@
 
       <div class="timer-form" id="TIMER">
         <div class="time-button">
-          <button class="switch-time-btn" id="pomodoro-time">Pomodoro</button>
+          <button class="switch-time-btn" id="pomodoro-time">
+             <!-- <audio src="/pomodoro/music/click2.mp3" autoplay></audio> -->
+            Pomodoro</button>
           <button class="switch-time-btn" id="short-break">Short break</button>
           <button class="switch-time-btn" id="long-break">Long break</button>
         </div>
@@ -164,7 +165,7 @@
       <h1>Members</h1>
       <div class="prolife-container">
         <!-- ava1 -->
-        <div class="prolife-card">
+        <div class="prolife-card" data-aos="flip-left">
           <div class="card-img">
             <img src="/pomodoro/image/ava1.jpg" class="img-ava" alt="ava1" />
           </div>
@@ -181,7 +182,7 @@
           <button class="btn-contact">Contact Me</button>
         </div>
         <!-- ava2 -->
-        <div class="prolife-card">
+        <div class="prolife-card" data-aos="flip-down">
           <div class="card-img">
             <img src="/pomodoro/image/ava2.jpg" class="img-ava" alt="ava1" />
           </div>
@@ -198,7 +199,7 @@
           <button class="btn-contact">Contact Me</button>
         </div>
         <!-- ava3 -->
-        <div class="prolife-card">
+        <div class="prolife-card" data-aos="flip-right">
           <div class="card-img">
             <img src="/pomodoro/image/ava3.jpg" class="img-ava" alt="ava1" />
           </div>
@@ -217,19 +218,6 @@
       </div>
     </div>
     <div class="container5 player" id="MUSIC">
-      
-        </div>
-
-        <div id="wave">
-          <span class="stroke"></span>
-          <span class="stroke"></span>
-          <span class="stroke"></span>
-          <span class="stroke"></span>
-          <span class="stroke"></span>
-          <span class="stroke"></span>
-          <span class="stroke"></span>
-        </div>
-      </div>
     </div>
    <footer>
       <div class="footer-row">
@@ -253,9 +241,9 @@
     </footer>
     <!-- phần link script -->
     <script src="/pomodoro/js/pomodoro.js"></script>
-    <script src="/pomodoro/js/musicplayer.js"></script>
+    <!-- <script src="/pomodoro/js/musicplayer.js"></script> -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="/pomodoro/js/musicplayer.js"></script>
+  
     
     <script>
       AOS.init();

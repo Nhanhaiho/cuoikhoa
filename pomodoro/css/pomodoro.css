@@ -9,7 +9,7 @@
   list-style: none;
   text-decoration: none;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
 .container1 {
@@ -23,10 +23,9 @@ html{
 }
 /* phân side bar */
 .sidebar-container {
- position: -webkit-sticky;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
-  
 }
 .side-bar {
   position: absolute;
@@ -58,6 +57,7 @@ html{
   transition: 0.4s;
   background: #042331;
 }
+
 .side-bar ul li:hover a {
   padding-left: 50px;
 }
@@ -316,7 +316,7 @@ header h1 a {
   height: 100%;
   background: white;
   margin: 0 auto;
-  padding-top:40px;
+  padding-top: 40px;
   padding-bottom: 40px;
 }
 .container3 h1 {
@@ -332,7 +332,6 @@ header h1 a {
 }
 .pomodoro-description h2 {
   margin-top: 50px;
-  
 }
 .pomodoro-description p {
   font-size: 18px;
@@ -366,7 +365,7 @@ header h1 a {
 
 /* phan prolife */
 .container4 {
-   background-image: linear-gradient(#4568DC, #B06AB3);
+  background-image: linear-gradient(#4568dc, #b06ab3);
   width: 100%;
   height: 100vh;
   /* border: 2px solid red; */
@@ -376,7 +375,6 @@ header h1 a {
   font-family: "Poppins";
   color: whitesmoke;
   flex-direction: column;
-  
 }
 .container4 h1 {
   color: black;
