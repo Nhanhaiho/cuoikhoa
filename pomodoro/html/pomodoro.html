@@ -7,16 +7,21 @@
     <title>Timer</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="/pomodoro/css/pomodoro.css" />
+<<<<<<< HEAD
     <link rel="stylesheet" href="/pomodoro/css/musicplayer.css" />
     <link rel="stylesheet" href="/pomodoro/css/music-player.css"/>
+=======
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+>>>>>>> fee0e87e58823cc3309328b3e1fab8c18aa307fd
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
   <body>
+    <!-- phần side-bar -->
     <div class="sidebar-container">
-         <input type="checkbox" id="check" />
+      <input type="checkbox" id="check" />
       <label for="check">
         <i class="fas fa-bars" id="btn-open-sidebars"></i>
         <i class="fas fa-times" id="btn-close-sidebars"></i>
@@ -37,11 +42,13 @@
             <a href="#MEMBERS"><i class="fas fa-users"></i>Members</a>
           </li>
           <li>
-            <a href="#MUSIC"><i class="fas fa-music"></i>Music</a>
+           <a href="#MUSIC"><i class="fas fa-music"></i>Music</a>
           </li>
         </ul>
       </div>
-      </div>
+    </div>
+
+    <!-- phần đồng hồ -->
     <div class="container1" id="container">
       <header>
         <h1>
@@ -67,7 +74,9 @@
 
       <div class="timer-form" id="TIMER">
         <div class="time-button">
-          <button class="switch-time-btn" id="pomodoro-time">Pomodoro</button>
+          <button class="switch-time-btn" id="pomodoro-time">
+             <!-- <audio src="/pomodoro/music/click2.mp3" autoplay></audio> -->
+            Pomodoro</button>
           <button class="switch-time-btn" id="short-break">Short break</button>
           <button class="switch-time-btn" id="long-break">Long break</button>
         </div>
@@ -84,6 +93,7 @@
       </div>
       <p id="time-des">Time to focus!</p>
     </div>
+    <!-- phần todo-list -->
     <div class="container2" id="TODOLIST">
       <div
         class="todo-list-description"
@@ -92,10 +102,11 @@
       >
         <h2>Todo list</h2>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi
-          quaerat saepe qui rem iusto fugit accusamus in ratione, facilis fuga
-          nesciunt ut obcaecati similique voluptatibus neque, beatae minima ipsa
-          quis?
+         You can add your works
+         <br>
+         You can delete what you have written 
+          <br>
+          
         </p>
       </div>
       <div class="todo-list">
@@ -113,6 +124,8 @@
         </ul>
       </div>
     </div>
+    
+    <!-- phần giới thiệu về app -->
     <div class="container3" id="POMODORO">
       <h1>An online Pomodoro Timer to boost your productivity</h1>
       <div class="pomodoro-description des1">
@@ -160,12 +173,13 @@
         </ol>
       </div>
     </div>
+    
+    <!-- phần members -->
     <div class="container4" id="MEMBERS">
       <h1>Members</h1>
-
       <div class="prolife-container">
         <!-- ava1 -->
-        <div class="prolife-card">
+        <div class="prolife-card" data-aos="flip-left">
           <div class="card-img">
             <img src="/pomodoro/image/ava1.jpg" class="img-ava" alt="ava1" />
           </div>
@@ -182,7 +196,7 @@
           <button class="btn-contact">Contact Me</button>
         </div>
         <!-- ava2 -->
-        <div class="prolife-card">
+        <div class="prolife-card" data-aos="flip-down">
           <div class="card-img">
             <img src="/pomodoro/image/ava2.jpg" class="img-ava" alt="ava1" />
           </div>
@@ -199,7 +213,7 @@
           <button class="btn-contact">Contact Me</button>
         </div>
         <!-- ava3 -->
-        <div class="prolife-card">
+        <div class="prolife-card" data-aos="flip-right">
           <div class="card-img">
             <img src="/pomodoro/image/ava3.jpg" class="img-ava" alt="ava1" />
           </div>
@@ -217,78 +231,68 @@
         </div>
       </div>
     </div>
+   
+    <!-- phần music -->
     <div class="container5" id="MUSIC">
-      <div class="player">
-        <div class="wrapper">
-          <div class="details">
-            <div class="now-playing">PLAYING x OF y</div>
-            <div class="track-art"></div>
-            <div class="track-name">Track Name</div>
-            <div class="track-artist">Track Artist</div>
-          </div>
+
+  <!-- <video src="/pomodoro/image/video_background.mp4" muted autoplay preload="auto"
+        loop></video> -->
+
+<video src="/pomodoro/image/video-bg-night.mp4" preload="auto" loop=""  autoplay="" id="video-bg">
   
-          <div class="slider_container">
-            <div class="current-time">00:00</div>
-            <input
-              type="range"
-              min="1"
-              max="100"
-              value="0"
-              class="seek_slider"
-              onchange="seekTo()"
-            />
-            <div class="total-duration">00:00</div>
-          </div>
-  
-          <div class="slider_container">
-            <i class="fa fa-volume-down"></i>
-            <input
-              type="range"
-              min="1"
-              max="100"
-              value="99"
-              class="volume_slider"
-              onchange="setVolume()"
-            />
-            <i class="fa fa-volume-up"></i>
-          </div>
-  
-          <div class="buttons">
-            <div class="random-track" onclick="randomTrack()">
-              <i class="fas fa-random fa-1x" title="random"></i>
-            </div>
-            <div class="prev-track" onclick="prevTrack()">
-              <i class="fa fa-step-backward fa-1x"></i>
-            </div>
-            <div class="playpause-track" onclick="playpauseTrack()">
-              <i class="fa fa-play-circle fa-2x"></i>
-            </div>
-            <div class="next-track" onclick="nextTrack()">
-              <i class="fa fa-step-forward fa-1x"></i>
-            </div>
-            <div class="repeat-track" onclick="repeatTrack()">
-              <i class="fa fa-repeat fa-1x" title="repeat"></i>
-            </div>
-          </div>
-  
-          <div id="wave">
-            <span class="stroke"></span>
-            <span class="stroke"></span>
-            <span class="stroke"></span>
-            <span class="stroke"></span>
-            <span class="stroke"></span>
-            <span class="stroke"></span>
-            <span class="stroke"></span>
-          </div>
+       </video>
+       <div class="wrapper">
+        <div class="play-pause-btn">
+        <button id="prev" onclick="previous_song()"><i class="fas fa-backward" id="backward-icon"></i></button>
+         <button  id="play-btn" onclick="just_play()"><i class="fas fa-play" id="play-icon"></i></i></button>
+          <button id="next" onclick="next_song()"><i class="fas fa-forward" id="forward-icon"></i></button>
         </div>
+        <!-- <div class="icon-bg">
+          <button id="bg-change-btn" onclick="changeBackground()"><i class="fas fa-moon" id="moon"></i></button>
+        </div> -->
       </div>
+       <!-- <audio src="/pomodoro/image/video-bg-night.mp4" id="main-audio"></audio> -->
+      
+
     </div>
+
+     <footer>
+      <div class="footer-row">
+        <div class="footer-icons">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-snapchat"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-facebook"></i>
+        </div>
+
+        <ul class="footer-menu">
+          <li>Home</li>
+          <li>Services</li>
+          <li>About</li>
+          <li>Terms</li>
+          <li>Privacy Policy</li>
+        </ul>
+
+        <p class="footer-copyright">Mindx © 2021</p>
+      </div>
+    </footer>
     <script src="/pomodoro/js/pomodoro.js"></script>
-    <script src="/pomodoro/js/musicplayer.js"></script>
+<script src="/pomodoro/js/musicplayer.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="/pomodoro/js/music-player.js"></script>
+<script>AOS.init();</script>
+ </body>
+
+
+   
+  
+    <!-- phần link script -->
+    <script src="/pomodoro/js/pomodoro.js"></script>
+    <!-- <script src="/pomodoro/js/musicplayer.js"></script> -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="/pomodoro/js/music-player.js"></script>
     <script>
       AOS.init();
     </script>
   </body>
 </html>
+aksldjasdj
