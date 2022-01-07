@@ -35,6 +35,7 @@ function registerWithEmail(){
 }
 
 function loginWithGgl(){
+    console.log('help')
     const provider = new GoogleAuthProvider();
 
     signInWithPopup(auth, provider)
@@ -42,9 +43,11 @@ function loginWithGgl(){
         // This gives you a Google Access Token. You can use it to access the Google API.
 
         // const credential = GoogleAuthProvider.credentialFromResult(result);
+
         // we dont need to use credentials yet
 
         // const token = credential.accessToken;
+
         // this too
 
         // The signed-in user info.
@@ -129,7 +132,9 @@ const registerForm = document.getElementById('register');
 const registerFormBtn = document.getElementById('RegSubmit');
 const errorMessagelist =  //Make a Firebase list
 
+console.log(btnGglLogin)
+
 btnGglLogin.addEventListener('click', loginWithGgl)
-registerFormBtn.addEventListener('click', validateForm)
+//registerFormBtn.addEventListener('click', validateForm)
 //registerFormBtn.addEventListener('submit', validateForm)
 
