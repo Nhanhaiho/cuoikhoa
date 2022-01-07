@@ -7,13 +7,14 @@
     <title>Timer</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="/pomodoro/css/pomodoro.css" />
-   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
   <body>
+    <!-- phần side-bar -->
     <div class="sidebar-container">
       <input type="checkbox" id="check" />
       <label for="check">
@@ -41,6 +42,8 @@
         </ul>
       </div>
     </div>
+
+    <!-- phần đồng hồ -->
     <div class="container1" id="container">
       <header>
         <h1>
@@ -85,6 +88,7 @@
       </div>
       <p id="time-des">Time to focus!</p>
     </div>
+    <!-- phần todo-list -->
     <div class="container2" id="TODOLIST">
       <div
         class="todo-list-description"
@@ -93,10 +97,11 @@
       >
         <h2>Todo list</h2>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi
-          quaerat saepe qui rem iusto fugit accusamus in ratione, facilis fuga
-          nesciunt ut obcaecati similique voluptatibus neque, beatae minima ipsa
-          quis?
+         You can add your works
+         <br>
+         You can delete what you have written 
+          <br>
+          
         </p>
       </div>
       <div class="todo-list">
@@ -114,6 +119,8 @@
         </ul>
       </div>
     </div>
+    
+    <!-- phần giới thiệu về app -->
     <div class="container3" id="POMODORO">
       <h1>An online Pomodoro Timer to boost your productivity</h1>
       <div class="pomodoro-description des1">
@@ -161,6 +168,8 @@
         </ol>
       </div>
     </div>
+    
+    <!-- phần members -->
     <div class="container4" id="MEMBERS">
       <h1>Members</h1>
       <div class="prolife-container">
@@ -217,9 +226,31 @@
         </div>
       </div>
     </div>
-    <div class="container5 player" id="MUSIC">
+   
+    <!-- phần music -->
+    <div class="container5" id="MUSIC">
+    
+  <!-- <video src="/pomodoro/image/video_background.mp4" muted autoplay preload="auto"
+        loop></video> -->
+
+<video src="/pomodoro/image/video-bg-night.mp4" preload="auto" loop=""  autoplay="" id="video-bg">
+  
+       </video>
+       <div class="wrapper">
+        <div class="play-pause-btn">
+        <button id="prev" onclick="previous_song()"><i class="fas fa-backward" id="backward-icon"></i></button>
+         <button  id="play-btn" onclick="just_play()"><i class="fas fa-play" id="play-icon"></i></i></button>
+          <button id="next" onclick="next_song()"><i class="fas fa-forward" id="forward-icon"></i></button>
+        </div>
+        <!-- <div class="icon-bg">
+          <button id="bg-change-btn" onclick="changeBackground()"><i class="fas fa-moon" id="moon"></i></button>
+        </div> -->
+      </div>
+       <!-- <audio src="/pomodoro/image/video-bg-night.mp4" id="main-audio"></audio> -->
+      
     </div>
-   <footer>
+
+     <footer>
       <div class="footer-row">
         <div class="footer-icons">
           <i class="fab fa-instagram"></i>
@@ -239,12 +270,22 @@
         <p class="footer-copyright">Mindx © 2021</p>
       </div>
     </footer>
+    <script src="/pomodoro/js/pomodoro.js"></script>
+<script src="/pomodoro/js/musicplayer.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="/pomodoro/js/music-player.js"></script>
+<script>AOS.init();</script>
+ </body>
+
+
+   
+  
     <!-- phần link script -->
     <script src="/pomodoro/js/pomodoro.js"></script>
     <!-- <script src="/pomodoro/js/musicplayer.js"></script> -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   
-    
+  
     <script>
       AOS.init();
     </script>
