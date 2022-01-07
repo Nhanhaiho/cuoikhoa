@@ -210,6 +210,7 @@ btnaddEl.addEventListener("click", () => {
     alert("nhap j do di ban");
   }
 });
+
 renderTodos(todos);
 liTodos();
 
@@ -217,3 +218,94 @@ const loginBtnSwitchPage = document.getElementById("login-btn");
 loginBtnSwitchPage.addEventListener("click", () => {
   window.location.href = "/pomodoro/html/login.html";
 });
+
+// music
+// const playbtn = document.getElementById("play-btn");
+// playbtn.addEventListener("click", () => {
+//   playbtn.setAttribute('class',"fas fa-stop")
+// })
+let allMusic = [
+  {
+    name: "lofi1",
+    path:"/pomodoro/music/lofi_music_1.mp3"
+  },
+  {
+    name: "lofi2",
+    path:"/pomodoro/music/lofi_music_2.mp3"
+  }
+]
+// const audiolofi1 = new Audio('/pomodoro/music/lofi_music_1.mp3');
+// audiolofi1.play()
+const mainAduio = document.getElementById('main-audio');
+const playMusicEl = document.getElementById('play-btn');
+const prevSong = document.getElementById('prev')
+const nextSong = document.getElementById('next')
+let index_no = 0;
+let playing_song = false;
+const backIconEl = document.getElementById('backward-icon')
+const playIconEl = document.getElementById('play-icon')
+const forwardIconEl = document.getElementById('forward-icon')
+
+let track = document.createElement("audio")
+function loadTrack(index_no) {
+  track.src = allMusic[index_no].path;
+  track.load()
+  
+}
+loadTrack(index_no);
+function just_play() {
+  if (playing_song == false) {
+    playsong();
+  } else {
+    pausesong()
+  }
+  
+}
+// play song
+function playsong() {
+  track.play();
+  playing_song = true;
+  playIconEl.setAttribute('class','fas fa-pause')
+}
+// pause song
+function pausesong() {
+  track.pause();
+  playing_song = false;
+  playIconEl.setAttribute('class','fas fa-play')
+  }
+// next song 
+function next_song() {
+  if (index_no < allMusic.length - 1) {
+    index_no++;
+    loadTrack(index_no);
+    playsong()
+  } else {
+    index_no = 0;
+    loadTrack(index_no);
+    playsong()
+  }
+}
+// previous song 
+function previous_song() {
+  if (index_no > 0) {
+    index_no-=1;
+    loadTrack(index_no);
+    playsong()
+  } else {
+    index_no = allMusic.length;
+    loadTrack(index_no);
+    playsong();
+  }
+}
+
+// change background
+// const AllBackground = [
+//   {
+//     name: 'day',
+//     path : "/pomodoro/image/video-bg-day.mp4"
+//   },
+//   {
+//     name: 'night',
+//     path : "/pomodoro/image/video-bg-night.mp4"
+//   }
+// ]
