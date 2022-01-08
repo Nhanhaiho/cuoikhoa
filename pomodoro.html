@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timer</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/pomodoro/css/pomodoro.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- phần side-bar -->
+    <div class="sidebar-container">
+      <input type="checkbox" id="check" />
+      <label for="check">
+        <i class="fas fa-bars" id="btn-open-sidebars"></i>
+        <i class="fas fa-times" id="btn-close-sidebars"></i>
+      </label>
+      <div class="side-bar">
+        <header class="side-bar-header">Menu</header>
+        <ul>
+          <li>
+            <a href="#TIMER"><i class="fas fa-clock"></i>Timer</a>
+          </li>
+          <li>
+            <a href="#TODOLIST"><i class="fas fa-list"></i>Todo list</a>
+          </li>
+          <li>
+           <a href="#MUSIC"><i class="fas fa-music"></i>Music</a>
+          </li>
+          <li>
+            <a href="#POMODORO"><i class="fas fa-info-circle"></i>Pomodoro</a>
+          </li>
+          <li>
+            <a href="#MEMBERS"><i class="fas fa-users"></i>Members</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+     <!-- phần đồng hồ -->
+    <div class="container1" id="container">
+      <header>
+        <h1>
+          <a>
+            <img
+              src="https://pomofocus.io/icons/icon-white.png"
+              alt="tick-icon"
+              class="tick-icon"
+            />
+            Pomofocus
+          </a>
+        </h1>
+        <ul class="nav-button">
+          <li>
+            <button><i class="fas fa-cog"></i>Settings</button>
+          </li>
+          <li class="login-btn" id="login-btn">
+            <button><i class="fas fa-sign-out-alt"></i>log in</button>
+          </li>
+        </ul>
+      </header>
+      <hr class="hr-header" />
+
+      <div class="timer-form" id="TIMER">
+        <div class="time-button">
+          <button class="switch-time-btn" id="pomodoro-time">
+             <!-- <audio src="/pomodoro/music/click2.mp3" autoplay></audio> -->
+            Pomodoro</button>
+          <button class="switch-time-btn" id="short-break">Short break</button>
+          <button class="switch-time-btn" id="long-break">Long break</button>
+        </div>
+        <div class="time-string" id="time">
+          <p id="w-minute">25</p>
+          <p class="semi-colon">:</p>
+          <p id="w-second">00</p>
+        </div>
+        <div class="btn-pause">
+          <button style="color: rgb(217, 85, 80)" id="Start-btn">Start</button>
+          <button style="color: rgb(217, 85, 80)" id="Reset-btn">Reset</button>
+          <button style="color: rgb(217, 85, 80)" id="Stop-btn">Stop</button>
+        </div>
+      </div>
+      <p id="time-des">Time to focus!</p>
+    </div>
+    <!-- phần todo-list -->
+    <div class="container2" id="TODOLIST">
+      <div
+        class="todo-list-description"
+        data-aos="fade-up"
+        data-aos-duration="3000"
+      >
+        <h2>Todo list</h2>
+        <p>
+         You can add your works
+         <br>
+         You can delete what you have written 
+          <br>
+        </p>
+      </div>
+      <div class="todo-list">
+        <h2>POMODORO list</h2>
+        <div class="contain-input">
+          <input placeholder="Add your works" id="todo-input" />
+          <button id="todo-add-btn">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+        <ul id="todo-list-ul">
+          <!-- <li>nhan</i></li><i class="fas fa-trash"></i>
+          <li>nhan</li><i class="fas fa-trash"></i>
+          <li>nhan</li><i class="fas fa-trash"></i> -->
+        </ul>
+      </div>
+    </div>
+    <!-- phần music -->
+    <div class="container5" id="MUSIC">
+      <video src="/pomodoro/image/video-bg-night.mp4" preload="auto" loop=""  autoplay="" id="video-bg"></video>
+       <div class="wrapper">
+        <div class="play-pause-btn">
+        <button id="prev" onclick="previous_song()"><i class="fas fa-backward" id="backward-icon"></i></button>
+         <button  id="play-btn" onclick="just_play()"><i class="fas fa-play" id="play-icon"></i></i></button>
+          <button id="next" onclick="next_song()"><i class="fas fa-forward" id="forward-icon"></i></button>
+        </div>
+        <div class="icon-bg" id="icon-bg">
+           <button id="bg-change-btn-night"><i class="fas fa-moon" id="icon-bg-night"></i></button>
+          <button id="bg-change-btn-day"><i class="fas fa-sun" id="icon-bg-day"></i></button>
+        </div>
+      </div>
+    </div>
+    <!-- phần giới thiệu về app -->
+    <div class="container3" id="POMODORO">
+      <h1>An online Pomodoro Timer to boost your productivity</h1>
+      <div class="pomodoro-description des1">
+        <h2>What is PomoFocus?</h2>
+        <p>
+          Pomofocus is a customizable pomodoro timer that works on desktop &
+          mobile browser. The aim of this app is to help you focus on any task
+          you are working on, such as study, writing, or coding. This app is
+          inspired by
+          <a href="https://francescocirillo.com/pages/pomodoro-technique"
+            >Pomodoro Technique</a
+          >
+          which is a time management method developed by Francesco Cirillo.
+        </p>
+      </div>
+      <div class="pomodoro-description des2">
+        <h2>What is Pomodoro Technique?</h2>
+        <p>
+          The Pomodoro Technique is created by Francesco Cirillo for a more
+          productive way to work and study. The technique uses a timer to break
+          down work into intervals, traditionally 25 minutes in length,
+          separated by short breaks. Each interval is known as a pomodoro, from
+          the Italian word for 'tomato', after the tomato-shaped kitchen timer
+          that Cirillo used as a university student. -
+          <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique"
+            >Wikipedia</a
+          >.
+        </p>
+      </div>
+      <div class="pomodoro-description des3">
+        <h2>How to use the Pomodoro Timer?</h2>
+        <ol>
+          <li>1. <span>Add tasks</span> to work on today</li>
+          <li>
+            2. <span>Set estimate pomodoros</span> (1 = 25min of work) for each
+            tasks
+          </li>
+          <li>3. <span>Select a task</span> to work on</li>
+          <li>
+            4. <span>Start timer</span> and focus on the task for 25 minutes
+          </li>
+          <li>
+            5. <span>Take a break</span> for 5 minutes when the alarm ring
+          </li>
+        </ol>
+      </div>
+    </div>
+    <!-- phần members -->
+    <div class="container4" id="MEMBERS">
+      <h1>Members</h1>
+      <div class="prolife-container">
+        <!-- ava1 -->
+        <div class="prolife-card" data-aos="flip-left">
+          <div class="card-img">
+            <img src="/pomodoro/image/ava1.jpg" class="img-ava" alt="ava1" />
+          </div>
+          <h2 class="prolife-name">Nhan</h2>
+          <p class="des-prolife-card">Web developer</p>
+          <div class="prolife-social">
+            <a href="https://www.facebook.com/profile.php?id=100059107955001"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+
+            <a href=""><i class="fab fa-youtube"></i></a>
+          </div>
+          <button class="btn-contact">Contact Me</button>
+        </div>
+        <!-- ava2 -->
+        <div class="prolife-card" data-aos="flip-down">
+          <div class="card-img">
+            <img src="/pomodoro/image/ava2.jpg" class="img-ava" alt="ava1" />
+          </div>
+          <h2 class="prolife-name">AN</h2>
+          <p class="des-prolife-card">Web developer</p>
+          <div class="prolife-social">
+            <a href="https://www.facebook.com/AnThanh1423"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href=""><i class="fab fa-github"></i></a>
+
+            <a href=""><i class="fab fa-youtube"></i></a>
+          </div>
+          <button class="btn-contact">Contact Me</button>
+        </div>
+        <!-- ava3 -->
+        <div class="prolife-card" data-aos="flip-right">
+          <div class="card-img">
+            <img src="/pomodoro/image/ava3.jpg" class="img-ava" alt="ava1" />
+          </div>
+          <h2 class="prolife-name">Quyen</h2>
+          <p class="des-prolife-card">Web developer</p>
+          <div class="prolife-social">
+            <a href="https://www.facebook.com/caixanh.bo.3"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href=""><i class="fab fa-github"></i></a>
+
+            <a href=""><i class="fab fa-youtube"></i></a>
+          </div>
+          <button class="btn-contact">Contact Me</button>
+        </div>
+      </div>
+    </div>
+    <!-- phần footer -->
+     <footer>
+      <div class="footer-row">
+        <div class="footer-icons">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-snapchat"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-facebook"></i>
+        </div>
+
+        <ul class="footer-menu">
+          <li>Home</li>
+          <li>Services</li>
+          <li>About</li>
+          <li>Terms</li>
+          <li>Privacy Policy</li>
+        </ul>
+
+        <p class="footer-copyright">Mindx © 2021</p>
+      </div>
+    </footer>
+
+<!-- phần link script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+    <script src="/pomodoro/js/pomodoro.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </body>
+</html>
+

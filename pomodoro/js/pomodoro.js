@@ -26,6 +26,8 @@ function endtimeSound() {
 }
 // console.log(m)
 // thay đổi màu với background các thứ
+const openSidebar = document.getElementById('btn-open-sidebars');
+const closeSidebar=document.getElementById('btn-close-sidebars')
 let currentScreen = "pomodoro";
 PoTimebtn.addEventListener("click", () => {
   stopInterval()
@@ -34,10 +36,10 @@ PoTimebtn.addEventListener("click", () => {
   containEl.setAttribute("style", "background :rgb(217, 85, 80); ");
   pdesEl.innerHTML = pdes[0];
   startBtn.setAttribute("style", "color :rgb(217, 85, 80); ");
-
-stopBtn.setAttribute("style", "color :rgb(217, 85, 80); ");
+  stopBtn.setAttribute("style", "color :rgb(217, 85, 80); ");
   resetBtn.setAttribute("style", "color :rgb(217, 85, 80); ");
-  //   deleteEl.setAttribute('style', 'color :rgb(217, 85, 80); ')
+  openSidebar.setAttribute("style", "color :rgb(217, 85, 80); ");
+  closeSidebar.setAttribute("style", "color :rgb(217, 85, 80); ");
   m.innerHTML = minute[0];
   s.innerText="00"
 });
@@ -52,7 +54,8 @@ SBbtn.addEventListener("click", () => {
   startBtn.setAttribute("style", "color :rgb(76, 145, 149); ");
   stopBtn.setAttribute("style", "color :rgb(76, 145, 149); ");
   resetBtn.setAttribute("style", "color :rgb(76, 145, 149); ");
-  // deleteEl.setAttribute('style', 'color :rgb(76, 145, 149); ')
+  openSidebar.setAttribute("style", "color :rgb(76, 145, 149); ");
+  closeSidebar.setAttribute("style", "color :rgb(76, 145, 149); ");
   m.innerHTML = minute[1];
   s.innerText="00"
 });
@@ -66,8 +69,8 @@ LBbtn.addEventListener("click", () => {
   startBtn.setAttribute("style", "color :rgb(69, 124, 163); ");
   stopBtn.setAttribute("style", "color :rgb(69, 124, 163); ");
   resetBtn.setAttribute("style", "color :rgb(69, 124, 163); ");
-  // deleteEl.setAttribute('style', 'color :rgb(69, 124, 163); ')
-  m.innerHTML = minute[2];
+  openSidebar.setAttribute("style", "color :rgb(69, 124, 163); ");
+  closeSidebar.setAttribute("style", "color :rgb(69, 124, 163); ");
   s.innerText="00"
 });
 
@@ -304,7 +307,7 @@ function next_song() {
 // previous song 
 function previous_song() {
   if (index_no > 0) {
-    index_no-=1;
+    index_no--;
     loadTrack(index_no);
     playsong()
   } else {
