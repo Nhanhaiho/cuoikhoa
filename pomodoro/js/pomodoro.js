@@ -14,13 +14,16 @@ const minute = [25, 5, 20];
 const second = [00];
 const audioEl1 = new Audio("/pomodoro/music/click2.mp3");
 const audioEl2 = new Audio("/pomodoro/music/click3.mp3");
+const audioEl3 = new Audio("/pomodoro/music/bell.mp3")
 function clickSound1() {
   audioEl1.play(); // hàm click
 }
 function clickSound2() {
   audioEl2.play(); 
 }
-
+function endtimeSound() {
+  audioEl3.play();
+}
 // console.log(m)
 // thay đổi màu với background các thứ
 let currentScreen = "pomodoro";
@@ -32,10 +35,11 @@ PoTimebtn.addEventListener("click", () => {
   pdesEl.innerHTML = pdes[0];
   startBtn.setAttribute("style", "color :rgb(217, 85, 80); ");
 
-  stopBtn.setAttribute("style", "color :rgb(217, 85, 80); ");
+stopBtn.setAttribute("style", "color :rgb(217, 85, 80); ");
   resetBtn.setAttribute("style", "color :rgb(217, 85, 80); ");
   //   deleteEl.setAttribute('style', 'color :rgb(217, 85, 80); ')
   m.innerHTML = minute[0];
+  s.innerText="00"
 });
 
 
@@ -50,7 +54,7 @@ SBbtn.addEventListener("click", () => {
   resetBtn.setAttribute("style", "color :rgb(76, 145, 149); ");
   // deleteEl.setAttribute('style', 'color :rgb(76, 145, 149); ')
   m.innerHTML = minute[1];
-  
+  s.innerText="00"
 });
 
 LBbtn.addEventListener("click", () => {
@@ -64,7 +68,7 @@ LBbtn.addEventListener("click", () => {
   resetBtn.setAttribute("style", "color :rgb(69, 124, 163); ");
   // deleteEl.setAttribute('style', 'color :rgb(69, 124, 163); ')
   m.innerHTML = minute[2];
-  
+  s.innerText="00"
 });
 
 // phan timings
@@ -110,13 +114,14 @@ function timer() {
     s.innerText = 59;
     m.innerText--;
   }
-  if (m.innerText == 0 && s.innerText == 0 - 1) {
-    alert("xong");
+  if (m.innerText == 0 && s.innerText == 0) {
+    
+    endtimeSound();
   }
 }
 
 function stopInterval() {
-  s.innerText="00";
+  // s.innerText="00";
   clearInterval(startTimer);
 }
 
@@ -207,7 +212,7 @@ btnaddEl.addEventListener("click", () => {
     inputEl.value = "";
     reRenderTodos();
   } else {
-    alert("nhap j do di ban");
+    alert("You have to type something");
   }
 });
 
