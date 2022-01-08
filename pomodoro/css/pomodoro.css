@@ -457,7 +457,7 @@ header h1 a {
 /* phần footer */
 footer {
   width: 100%;
-  height: 250px;
+  height: 200px;
   background: #edd2f3;
   display: flex;
   justify-content: center;
@@ -493,9 +493,7 @@ footer {
   height: 100%;
   background: #d6e5fa;
   /* padding: 20px; */
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
+  
 }
 /* iframe{ visibility: hidden;} */
 .container5 video {
@@ -503,12 +501,14 @@ footer {
   width: 100%;
 }
 .play-pause-btn {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   height: 50px;
   width: 200px;
   display: flex;
   align-items: center;
   justify-content: space-around;
+   background:#BAABDA;
+   border-radius: 30px;
 }
 .play-pause-btn i {
   font-size: 40px;
@@ -521,12 +521,31 @@ footer {
 .wrapper{
   display:flex;
   align-items: center;
+  /* justify-content:flex-end; */
+  justify-content: space-evenly;
+  color:#EEF2FF;
+  height:60px;
 }
 .icon-bg i{
-  font-size:30px;
+  font-size:32px;
 }
 .icon-bg button{
   background:none;
   border:none;
   cursor: pointer;
 }
+.icon-bg{
+  /* border: 2px solid red; */
+  /* padding:4px; */
+  border-radius:30px;
+  background:#BAABDA;
+  height:45px;
+  width: 100px;
+  display:flex;
+  align-items: center;
+  justify-content:space-evenly;
+  
+}
+/* .fa-moon{
+  border-right:2px solid gray ;
+} */

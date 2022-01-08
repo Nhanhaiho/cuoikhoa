@@ -30,19 +30,19 @@
             <a href="#TODOLIST"><i class="fas fa-list"></i>Todo list</a>
           </li>
           <li>
+           <a href="#MUSIC"><i class="fas fa-music"></i>Music</a>
+          </li>
+          <li>
             <a href="#POMODORO"><i class="fas fa-info-circle"></i>Pomodoro</a>
           </li>
           <li>
             <a href="#MEMBERS"><i class="fas fa-users"></i>Members</a>
           </li>
-          <li>
-           <a href="#MUSIC"><i class="fas fa-music"></i>Music</a>
-          </li>
+          
         </ul>
       </div>
     </div>
-
-    <!-- phần đồng hồ -->
+     <!-- phần đồng hồ -->
     <div class="container1" id="container">
       <header>
         <h1>
@@ -118,7 +118,21 @@
         </ul>
       </div>
     </div>
-    
+    <!-- phần music -->
+    <div class="container5" id="MUSIC">
+      <video src="/pomodoro/image/video-bg-night.mp4" preload="auto" loop=""  autoplay="" id="video-bg"></video>
+       <div class="wrapper">
+        <div class="play-pause-btn">
+        <button id="prev" onclick="previous_song()"><i class="fas fa-backward" id="backward-icon"></i></button>
+         <button  id="play-btn" onclick="just_play()"><i class="fas fa-play" id="play-icon"></i></i></button>
+          <button id="next" onclick="next_song()"><i class="fas fa-forward" id="forward-icon"></i></button>
+        </div>
+        <div class="icon-bg" id="icon-bg">
+           <button id="bg-change-btn-night"><i class="fas fa-moon" id="icon-bg-night"></i></button>
+          <button id="bg-change-btn-day"><i class="fas fa-sun" id="icon-bg-day"></i></button>
+        </div>
+      </div>
+    </div>
     <!-- phần giới thiệu về app -->
     <div class="container3" id="POMODORO">
       <h1>An online Pomodoro Timer to boost your productivity</h1>
@@ -167,7 +181,6 @@
         </ol>
       </div>
     </div>
-    
     <!-- phần members -->
     <div class="container4" id="MEMBERS">
       <h1>Members</h1>
@@ -225,31 +238,7 @@
         </div>
       </div>
     </div>
-   
-    <!-- phần music -->
-    <div class="container5" id="MUSIC">
-
-  <!-- <video src="/pomodoro/image/video_background.mp4" muted autoplay preload="auto"
-        loop></video> -->
-
-<video src="/pomodoro/image/video-bg-night.mp4" preload="auto" loop=""  autoplay="" id="video-bg">
-  
-       </video>
-       <div class="wrapper">
-        <div class="play-pause-btn">
-        <button id="prev" onclick="previous_song()"><i class="fas fa-backward" id="backward-icon"></i></button>
-         <button  id="play-btn" onclick="just_play()"><i class="fas fa-play" id="play-icon"></i></i></button>
-          <button id="next" onclick="next_song()"><i class="fas fa-forward" id="forward-icon"></i></button>
-        </div>
-        <!-- <div class="icon-bg">
-          <button id="bg-change-btn" onclick="changeBackground()"><i class="fas fa-moon" id="moon"></i></button>
-        </div> -->
-      </div>
-       <!-- <audio src="/pomodoro/image/video-bg-night.mp4" id="main-audio"></audio> -->
-      
-
-    </div>
-
+    <!-- phần footer -->
      <footer>
       <div class="footer-row">
         <div class="footer-icons">
@@ -270,23 +259,12 @@
         <p class="footer-copyright">Mindx © 2021</p>
       </div>
     </footer>
-    <script src="/pomodoro/js/pomodoro.js"></script>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-<script>AOS.init();</script>
- </body>
-
-
-   
-  
-    <!-- phần link script -->
-    <script src="/pomodoro/js/pomodoro.js"></script>
-    <!-- <script src="/pomodoro/js/musicplayer.js"></script> -->
+<!-- phần link script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+    <script>AOS.init();</script>
+    <script src="/pomodoro/js/pomodoro.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </body>
 </html>
 

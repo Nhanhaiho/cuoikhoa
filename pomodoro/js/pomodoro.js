@@ -237,6 +237,17 @@ let allMusic = [
   {
     name: "lofi2",
     path:"/pomodoro/music/lofi_music_2.mp3"
+  },
+  {
+    name: "lofi3",
+    path:"/pomodoro/music/lofi_music_3.mp3"
+  },
+  {
+    name: "lofi4",
+    path:"/pomodoro/music/lofi_music_4.mp3"
+  },{
+    name: "lofi5",
+    path:"/pomodoro/music/lofi_music_5.mp3"
   }
 ]
 // const audiolofi1 = new Audio('/pomodoro/music/lofi_music_1.mp3');
@@ -304,13 +315,33 @@ function previous_song() {
 }
 
 // change background
-// const AllBackground = [
-//   {
-//     name: 'day',
-//     path : "/pomodoro/image/video-bg-day.mp4"
-//   },
-//   {
-//     name: 'night',
-//     path : "/pomodoro/image/video-bg-night.mp4"
-//   }
-// ]
+const AllBackground = [
+  {
+    name: 'day',
+    path: "/pomodoro/image/video-bg-day.mp4",
+    icon :'fas fa-sun'
+  },
+  {
+    name: 'night',
+    path: "/pomodoro/image/video-bg-night.mp4",
+    icon :'fas fa-moon'
+  }
+]
+const button_background_day = document.getElementById('bg-change-btn-day');
+const icon_background_day = document.getElementById('icon-bg-day');
+const button_background_night = document.getElementById('bg-change-btn-night');
+const icon_background_night = document.getElementById('icon-bg-night');
+const video_background = document.getElementById('video-bg');
+const icon_bg_el=document.getElementById('icon-bg')
+button_background_day.addEventListener('click', () => {
+  video_background.setAttribute('src', AllBackground[0].path);
+  icon_background_day.style.color = "#FF5959";
+   icon_background_night.style.color="#0F0E0E"
+})
+button_background_night.addEventListener('click', () => {
+  video_background.setAttribute('src', AllBackground[1].path);
+  icon_background_day.style.color = "#0F0E0E";
+  icon_background_night.style.color = "#F0BB62"
+  // icon_bg_el.style.background = 'rgba(255, 255, 255, 0.1)'
+  //  icon_bg_el.style.backgroundSize ='50% left';
+})
