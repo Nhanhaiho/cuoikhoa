@@ -24,6 +24,7 @@ function clickSound2() {
 function endtimeSound() {
   audioEl3.play();
 }
+const titleEl = document.getElementById('title');
 // console.log(m)
 // thay đổi màu với background các thứ
 const openSidebar = document.getElementById('btn-open-sidebars');
@@ -33,8 +34,9 @@ PoTimebtn.addEventListener("click", () => {
   stopInterval()
   currentScreen = "pomodoro";
   clickSound2()
-  containEl.setAttribute("style", "background :rgb(217, 85, 80); ");
   pdesEl.innerHTML = pdes[0];
+   titleEl.innerHTML = pdes[0];
+  containEl.setAttribute("style", "background :rgb(217, 85, 80); ");
   startBtn.setAttribute("style", "color :rgb(217, 85, 80); ");
   stopBtn.setAttribute("style", "color :rgb(217, 85, 80); ");
   resetBtn.setAttribute("style", "color :rgb(217, 85, 80); ");
@@ -49,8 +51,9 @@ SBbtn.addEventListener("click", () => {
   stopInterval()
   currentScreen = "short_break";
   clickSound2()
-  containEl.setAttribute("style", "background :rgb(76, 145, 149); ");
   pdesEl.innerHTML = pdes[1]; //
+  titleEl.innerHTML = pdes[1];
+  containEl.setAttribute("style", "background :rgb(76, 145, 149); ");
   startBtn.setAttribute("style", "color :rgb(76, 145, 149); ");
   stopBtn.setAttribute("style", "color :rgb(76, 145, 149); ");
   resetBtn.setAttribute("style", "color :rgb(76, 145, 149); ");
@@ -64,8 +67,9 @@ LBbtn.addEventListener("click", () => {
   stopInterval()
   currentScreen = "long_break";
   clickSound2()
+    pdesEl.innerHTML = pdes[2];
+  titleEl.innerHTML = pdes[2];
   containEl.setAttribute("style", "background :rgb(69, 124, 163); ");
-  pdesEl.innerHTML = pdes[2];
   startBtn.setAttribute("style", "color :rgb(69, 124, 163); ");
   stopBtn.setAttribute("style", "color :rgb(69, 124, 163); ");
   resetBtn.setAttribute("style", "color :rgb(69, 124, 163); ");
