@@ -348,3 +348,41 @@ button_background_night.addEventListener('click', () => {
   // icon_bg_el.style.background = 'rgba(255, 255, 255, 0.1)'
   //  icon_bg_el.style.backgroundSize ='50% left';
 })
+
+// phần modal
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay')
+
+openModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = document.querySelector(button.dataset.modalTarget)
+    openModal(modal);
+  })
+})
+
+overlay.addEventListener('click', () => {
+  const modals = document.querySelectorAll('.modal.active')
+  modals.forEach(modal => {
+    closeModal(modal);
+  })
+})
+
+closeModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = button.closest('.modal')
+    closeModal(modal);
+  })
+})
+
+
+function openModal(modal) {
+  if (modal == null) return
+    modal.classList.add('active');
+    overlay.classList.add('active')
+}
+function closeModal(modal) {
+  if (modal == null) return
+    modal.classList.remove('active');
+    overlay.classList.remove('active')
+}

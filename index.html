@@ -7,7 +7,7 @@
     <title>POMOFOCUS</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="/pomodoro/css/pomodoro.css" />
-    <link rel="icon" href="https://w7.pngwing.com/pngs/690/72/png-transparent-emoji-tomato-food-pomodoro-technique-vegetable-tomato-natural-foods-leaf-fruit-thumbnail.png">
+    <link rel="icon" href="/pomodoro/image/tomato.png">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -58,7 +58,35 @@
         </h1>
         <ul class="nav-button">
           <li>
-            <button><i class="fas fa-cog"></i>Settings</button>
+            <button data-modal-target="#modal"><i class="fas fa-cog"></i>Settings</button>
+            <div class='modal active' id="modal">
+              <div class="modal-header">
+                <div class="modal-title">TIMER SETTINGS</div>
+               <i data-close-button class="fas fa-times close-modal"></i>
+              </div>
+              <div class="hr"></div>
+              <div class="modal-body">
+               <div class="setting-minutes-titles">
+                 <span>Time (minutes)</span>
+               </div>
+               <div class="setting-minutes">
+                 <div>
+                   <label class="setting-label">Pomodoro</label>
+                   <input type="number" min="0" step='1' value='25'>
+                 </div>
+                 <div>
+                   <label class="setting-label">Short Break</label>
+                   <input type="number" min="0" step='1' value='5'>
+                  </div>
+                 <div>
+                   <label class="setting-label">Long Break</label>
+                   <input type="number" min="0" step='1' value='20'>
+                  </div>
+               </div>
+          
+              </div>
+            </div>
+            <div id="overlay"></div>
           </li>
           <li class="login-btn" id="login-btn">
             <button><i class="fas fa-sign-out-alt"></i>log in</button>
