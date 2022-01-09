@@ -71,6 +71,7 @@ LBbtn.addEventListener("click", () => {
   resetBtn.setAttribute("style", "color :rgb(69, 124, 163); ");
   openSidebar.setAttribute("style", "color :rgb(69, 124, 163); ");
   closeSidebar.setAttribute("style", "color :rgb(69, 124, 163); ");
+  m.innerHTML=minute[2]
   s.innerText="00"
 });
 
@@ -351,7 +352,7 @@ button_background_night.addEventListener('click', () => {
 
 // phần modal
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
-const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const closeModalButtons = document.querySelectorAll('[data-modal-close]')
 const overlay = document.getElementById('overlay')
 
 openModalButtons.forEach(button => {
