@@ -45,6 +45,10 @@ PoTimebtn.addEventListener("click", () => {
   m.innerHTML = minute[0];
   s.innerText="00"
 });
+PoTimebtn.addEventListener('dblclick', () => {
+  clickSound2()
+   titleEl.innerHTML ='POMOFOCUS';
+})
 
 
 SBbtn.addEventListener("click", () => {
