@@ -1,4 +1,5 @@
 export function saveUserToLocalStorage(user) {
+    user.expirataionDate = user.lastLoginAt + 30;
     localStorage.setItem("user", JSON.stringify(user));
 }
   
