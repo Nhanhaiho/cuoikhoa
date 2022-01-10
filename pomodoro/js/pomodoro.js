@@ -14,57 +14,73 @@ const minute = [25, 5, 20];
 const second = [00];
 const audioEl1 = new Audio("/pomodoro/music/click2.mp3");
 const audioEl2 = new Audio("/pomodoro/music/click3.mp3");
+const audioEl3 = new Audio("/pomodoro/music/bell.mp3")
 function clickSound1() {
   audioEl1.play(); // hàm click
 }
 function clickSound2() {
   audioEl2.play(); 
 }
-
+function endtimeSound() {
+  audioEl3.play();
+}
+const titleEl = document.getElementById('title');
 // console.log(m)
 // thay đổi màu với background các thứ
+const openSidebar = document.getElementById('btn-open-sidebars');
+const closeSidebar=document.getElementById('btn-close-sidebars')
 let currentScreen = "pomodoro";
 PoTimebtn.addEventListener("click", () => {
   stopInterval()
   currentScreen = "pomodoro";
   clickSound2()
-  containEl.setAttribute("style", "background :rgb(217, 85, 80); ");
   pdesEl.innerHTML = pdes[0];
+   titleEl.innerHTML = pdes[0];
+  containEl.setAttribute("style", "background :rgb(217, 85, 80); ");
   startBtn.setAttribute("style", "color :rgb(217, 85, 80); ");
-
   stopBtn.setAttribute("style", "color :rgb(217, 85, 80); ");
   resetBtn.setAttribute("style", "color :rgb(217, 85, 80); ");
-  //   deleteEl.setAttribute('style', 'color :rgb(217, 85, 80); ')
+  openSidebar.setAttribute("style", "color :rgb(217, 85, 80); ");
+  closeSidebar.setAttribute("style", "color :rgb(217, 85, 80); ");
   m.innerHTML = minute[0];
+  s.innerText="00"
 });
+PoTimebtn.addEventListener('dblclick', () => {
+  clickSound2()
+   titleEl.innerHTML ='POMOFOCUS';
+})
 
 
 SBbtn.addEventListener("click", () => {
   stopInterval()
   currentScreen = "short_break";
   clickSound2()
-  containEl.setAttribute("style", "background :rgb(76, 145, 149); ");
   pdesEl.innerHTML = pdes[1]; //
+  titleEl.innerHTML = pdes[1];
+  containEl.setAttribute("style", "background :rgb(76, 145, 149); ");
   startBtn.setAttribute("style", "color :rgb(76, 145, 149); ");
   stopBtn.setAttribute("style", "color :rgb(76, 145, 149); ");
   resetBtn.setAttribute("style", "color :rgb(76, 145, 149); ");
-  // deleteEl.setAttribute('style', 'color :rgb(76, 145, 149); ')
+  openSidebar.setAttribute("style", "color :rgb(76, 145, 149); ");
+  closeSidebar.setAttribute("style", "color :rgb(76, 145, 149); ");
   m.innerHTML = minute[1];
-  
+  s.innerText="00"
 });
 
 LBbtn.addEventListener("click", () => {
   stopInterval()
   currentScreen = "long_break";
   clickSound2()
+    pdesEl.innerHTML = pdes[2];
+  titleEl.innerHTML = pdes[2];
   containEl.setAttribute("style", "background :rgb(69, 124, 163); ");
-  pdesEl.innerHTML = pdes[2];
   startBtn.setAttribute("style", "color :rgb(69, 124, 163); ");
   stopBtn.setAttribute("style", "color :rgb(69, 124, 163); ");
   resetBtn.setAttribute("style", "color :rgb(69, 124, 163); ");
-  // deleteEl.setAttribute('style', 'color :rgb(69, 124, 163); ')
-  m.innerHTML = minute[2];
-  
+  openSidebar.setAttribute("style", "color :rgb(69, 124, 163); ");
+  closeSidebar.setAttribute("style", "color :rgb(69, 124, 163); ");
+  m.innerHTML=minute[2]
+  s.innerText="00"
 });
 
 // phan timings
@@ -110,13 +126,14 @@ function timer() {
     s.innerText = 59;
     m.innerText--;
   }
-  if (m.innerText == 0 && s.innerText == 0 - 1) {
-    alert("xong");
+  if (m.innerText == 0 && s.innerText == 0) {
+    
+    endtimeSound();
   }
 }
 
 function stopInterval() {
-  s.innerText="00";
+  // s.innerText="00";
   clearInterval(startTimer);
 }
 
@@ -207,7 +224,7 @@ btnaddEl.addEventListener("click", () => {
     inputEl.value = "";
     reRenderTodos();
   } else {
-    alert("nhap j do di ban");
+    alert("You have to type something");
   }
 });
 
@@ -232,6 +249,17 @@ let allMusic = [
   {
     name: "lofi2",
     path:"/pomodoro/music/lofi_music_2.mp3"
+  },
+  {
+    name: "lofi3",
+    path:"/pomodoro/music/lofi_music_3.mp3"
+  },
+  {
+    name: "lofi4",
+    path:"/pomodoro/music/lofi_music_4.mp3"
+  },{
+    name: "lofi5",
+    path:"/pomodoro/music/lofi_music_5.mp3"
   }
 ]
 // const audiolofi1 = new Audio('/pomodoro/music/lofi_music_1.mp3');
@@ -288,7 +316,7 @@ function next_song() {
 // previous song 
 function previous_song() {
   if (index_no > 0) {
-    index_no-=1;
+    index_no--;
     loadTrack(index_no);
     playsong()
   } else {
@@ -299,13 +327,71 @@ function previous_song() {
 }
 
 // change background
-// const AllBackground = [
-//   {
-//     name: 'day',
-//     path : "/pomodoro/image/video-bg-day.mp4"
-//   },
-//   {
-//     name: 'night',
-//     path : "/pomodoro/image/video-bg-night.mp4"
-//   }
-// ]
+const AllBackground = [
+  {
+    name: 'day',
+    path: "/pomodoro/image/video-bg-day.mp4",
+    icon :'fas fa-sun'
+  },
+  {
+    name: 'night',
+    path: "/pomodoro/image/video-bg-night.mp4",
+    icon :'fas fa-moon'
+  }
+]
+const button_background_day = document.getElementById('bg-change-btn-day');
+const icon_background_day = document.getElementById('icon-bg-day');
+const button_background_night = document.getElementById('bg-change-btn-night');
+const icon_background_night = document.getElementById('icon-bg-night');
+const video_background = document.getElementById('video-bg');
+const icon_bg_el=document.getElementById('icon-bg')
+button_background_day.addEventListener('click', () => {
+  video_background.setAttribute('src', AllBackground[0].path);
+  icon_background_day.style.color = "#FF5959";
+   icon_background_night.style.color="#0F0E0E"
+})
+button_background_night.addEventListener('click', () => {
+  video_background.setAttribute('src', AllBackground[1].path);
+  icon_background_day.style.color = "#0F0E0E";
+  icon_background_night.style.color = "#F0BB62"
+  // icon_bg_el.style.background = 'rgba(255, 255, 255, 0.1)'
+  //  icon_bg_el.style.backgroundSize ='50% left';
+})
+
+// phần modal
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-modal-close]')
+const overlay = document.getElementById('overlay')
+
+openModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = document.querySelector(button.dataset.modalTarget)
+    openModal(modal);
+  })
+})
+
+overlay.addEventListener('click', () => {
+  const modals = document.querySelectorAll('.modal.active')
+  modals.forEach(modal => {
+    closeModal(modal);
+  })
+})
+
+closeModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = button.closest('.modal')
+    closeModal(modal);
+  })
+})
+
+
+function openModal(modal) {
+  if (modal == null) return
+    modal.classList.add('active');
+    overlay.classList.add('active')
+}
+function closeModal(modal) {
+  if (modal == null) return
+    modal.classList.remove('active');
+    overlay.classList.remove('active')
+}
