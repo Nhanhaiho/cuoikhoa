@@ -146,13 +146,18 @@ header h1 a {
   width: 16px;
 }
 .fa-cog,
-.fa-sign-out-alt {
+.fa-sign-in-alt {
   margin-right: 1px;
 }
 .hr-header {
   max-width: 620px;
   margin: 0 auto;
   margin-bottom: 40px;
+}
+.log-out-options{
+  width:70px;
+  height:100px;
+  background:blue;
 }
 /* phan timer form */
 .timer-form {

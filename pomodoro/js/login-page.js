@@ -19,8 +19,13 @@ const auth = getAuth();
 ////CHECK IF USER IS ALREADY LOGGED IN
 if (getUserFromLocalStorage()){
     document.getElementById('loginMain').innerHTML = `
-        <p>BẠN ĐÃ LOGIN THÀNH CÔNG</p>
-        <p>XIN HÃY QUAY LẠI  <a href="./pomodoro.html">TRANG CHÍNH</a></p>
+     <div style="width:320px; height:200px;text-align:center;display:flex;justify-content: center;align-items: center; margin:0 auto;background:white;border-radius: 4px; margin-bottom:100px; padding:10px;">
+          <div >
+            <i class="fas fa-check-circle" style="font-size:70px; color:#93FFD8;"></i>
+            <p style="font-weight: bold; margin-top:10px;">Login thành công về trang chính</p>
+            <button style="width:100px;height:40px; margin-top:10px;border-radius:20%;border:none;background:#93FFD8;font-weight: bold; cursor:pointer; color:white;"  onclick="window.location.href='../../index.html'" >Enter</button>
+          </div>
+    </div>
     `
     console.log('logged in')
 } else {
@@ -29,7 +34,7 @@ if (getUserFromLocalStorage()){
 
 function successfulLogin(user){
     saveUserToLocalStorage(user);
-    location.replace('../html/pomodoro.html')
+    location.replace('../../index.html')
 }
 
 ////LOGIN BULLSHITS

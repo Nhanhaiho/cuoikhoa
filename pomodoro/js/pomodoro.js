@@ -25,6 +25,10 @@ function endtimeSound() {
   audioEl3.play();
 }
 const titleEl = document.getElementById('title');
+const inputPomodoro = document.getElementById('setting-pomodoro');
+const inputLong_break=document.getElementById('setting-longbreak');
+const inputShort_break = document.getElementById('setting-shortbreak');
+
 // console.log(m)
 // thay đổi màu với background các thứ
 const openSidebar = document.getElementById('btn-open-sidebars');
@@ -91,7 +95,7 @@ startBtn.addEventListener("click", () => {
   if (startTimer === undefined) {
     startTimer = setInterval(timer, 1000);
   } else {
-    alert("timer already started");
+    alert("timer already started or click reset");
   }
   clickSound1()
 });
