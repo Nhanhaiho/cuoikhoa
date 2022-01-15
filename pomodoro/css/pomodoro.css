@@ -227,6 +227,7 @@ header h1 a {
   padding: 40px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   /* align-items:center; */
 }
 .todo-list-description {
@@ -382,6 +383,8 @@ header h1 a {
   font-family: "Poppins";
   color: whitesmoke;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .container4 h1 {
   color: black;
