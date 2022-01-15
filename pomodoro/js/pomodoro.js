@@ -235,10 +235,7 @@ btnaddEl.addEventListener("click", () => {
 renderTodos(todos);
 liTodos();
 
-const loginBtnSwitchPage = document.getElementById("login-btn");
-loginBtnSwitchPage.addEventListener("click", () => {
-  window.location.href = "/pomodoro/html/login.html";
-});
+
 
 // music
 // const playbtn = document.getElementById("play-btn");

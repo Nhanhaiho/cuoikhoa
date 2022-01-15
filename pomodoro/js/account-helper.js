@@ -10,3 +10,8 @@ export function getUserFromLocalStorage() {
     }
     return null;
 }
+
+export function logoutUser() {
+  localStorage.removeItem("user");
+  location.reload();
+}

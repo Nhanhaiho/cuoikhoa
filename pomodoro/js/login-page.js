@@ -12,25 +12,38 @@ import {
 
 import { 
     saveUserToLocalStorage, 
-    getUserFromLocalStorage 
-} from "./firebase-helper.js";
+    getUserFromLocalStorage, 
+    logoutUser
+} from "./account-helper.js";
 
-const auth = getAuth();
+const userData = getUserFromLocalStorage();
 ////CHECK IF USER IS ALREADY LOGGED IN
-if (getUserFromLocalStorage()){
+if (userData){
     document.getElementById('loginMain').innerHTML = `
      <div style="width:320px; height:200px;text-align:center;display:flex;justify-content: center;align-items: center; margin:0 auto;background:white;border-radius: 4px; margin-bottom:100px; padding:10px;">
           <div >
-            <i class="fas fa-check-circle" style="font-size:70px; color:#93FFD8;"></i>
-            <p style="font-weight: bold; margin-top:10px;">Login thành công về trang chính</p>
-            <button style="width:100px;height:40px; margin-top:10px;border-radius:20%;border:none;background:#93FFD8;font-weight: bold; cursor:pointer; color:white;"  onclick="window.location.href='../../index.html'" >Enter</button>
+            <div>
+                <p style="">${userData.displayName}</p>
+                <img src="${userData.photoURL}">
+            </div>
+            <i class="fas fa-check-circle" style="font-size:70px; color:#00CC81;"></i>
+            <p style="font-weight: bold; margin-top:10px;">Bạn đã login thành công.</p>
+            <p style="font-weight: bold; margin-top:10px;">Nếu đây không phải là tài khoản của bạn thì hãy logout và đăng nhập lại</p>
+            <button style="width:100px;height:40px; margin-top:10px;border-radius:20%;border:none;background:#00CC81;font-weight: bold; cursor:pointer; color:white;"  onclick="window.location.href='../../index.html'" >Về trang chính</button>
+            <button id="LogoutAfter" style="width:100px;height:40px; margin-top:10px;border-radius:20%;border:none;background:#d62828;font-weight: bold; cursor:pointer; color:white;"  onclick="">Logout</button>
+
           </div>
     </div>
     `
+
+    document.getElementById("LogoutAfter").addEventListener('click', logoutUser)
     console.log('logged in')
 } else {
     console.log('not logged in')
 }
+
+const auth = getAuth();
+
 
 function successfulLogin(user){
     saveUserToLocalStorage(user);
@@ -67,6 +80,7 @@ function loginWithGgl(){
         // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
         // Basic logging
+        alert(`${errorMessage}`);
         console.log(`
             errorCode: ${errorCode}
             errorMessage: ${errorMessage}
@@ -153,6 +167,7 @@ function loginWithEmail() {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                alert(`${errorMessage}`)
                 console.log(`
                     errorCode: ${errorCode}
                     errorMsg: ${errorMessage}

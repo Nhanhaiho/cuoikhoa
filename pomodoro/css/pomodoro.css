@@ -663,3 +663,8 @@ color: rgb(85, 85, 85);
   background-color: #92A9BD;
   margin:0 auto;
 }
+
+#profilePic {
+  display: inline;
+  border-radius: 4px;
+}
