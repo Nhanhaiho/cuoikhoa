@@ -24,35 +24,49 @@ function clickSound2() {
 function endtimeSound() {
   audioEl3.play();
 }
+const titleEl = document.getElementById('title');
+const inputPomodoro = document.getElementById('setting-pomodoro');
+const inputLong_break=document.getElementById('setting-longbreak');
+const inputShort_break = document.getElementById('setting-shortbreak');
+
 // console.log(m)
 // thay đổi màu với background các thứ
+const openSidebar = document.getElementById('btn-open-sidebars');
+const closeSidebar=document.getElementById('btn-close-sidebars')
 let currentScreen = "pomodoro";
 PoTimebtn.addEventListener("click", () => {
   stopInterval()
   currentScreen = "pomodoro";
   clickSound2()
-  containEl.setAttribute("style", "background :rgb(217, 85, 80); ");
   pdesEl.innerHTML = pdes[0];
+   titleEl.innerHTML = pdes[0];
+  containEl.setAttribute("style", "background :rgb(217, 85, 80); ");
   startBtn.setAttribute("style", "color :rgb(217, 85, 80); ");
-
-stopBtn.setAttribute("style", "color :rgb(217, 85, 80); ");
+  stopBtn.setAttribute("style", "color :rgb(217, 85, 80); ");
   resetBtn.setAttribute("style", "color :rgb(217, 85, 80); ");
-  //   deleteEl.setAttribute('style', 'color :rgb(217, 85, 80); ')
+  openSidebar.setAttribute("style", "color :rgb(217, 85, 80); ");
+  closeSidebar.setAttribute("style", "color :rgb(217, 85, 80); ");
   m.innerHTML = minute[0];
   s.innerText="00"
 });
+PoTimebtn.addEventListener('dblclick', () => {
+  clickSound2()
+   titleEl.innerHTML ='POMOFOCUS';
+})
 
 
 SBbtn.addEventListener("click", () => {
   stopInterval()
   currentScreen = "short_break";
   clickSound2()
-  containEl.setAttribute("style", "background :rgb(76, 145, 149); ");
   pdesEl.innerHTML = pdes[1]; //
+  titleEl.innerHTML = pdes[1];
+  containEl.setAttribute("style", "background :rgb(76, 145, 149); ");
   startBtn.setAttribute("style", "color :rgb(76, 145, 149); ");
   stopBtn.setAttribute("style", "color :rgb(76, 145, 149); ");
   resetBtn.setAttribute("style", "color :rgb(76, 145, 149); ");
-  // deleteEl.setAttribute('style', 'color :rgb(76, 145, 149); ')
+  openSidebar.setAttribute("style", "color :rgb(76, 145, 149); ");
+  closeSidebar.setAttribute("style", "color :rgb(76, 145, 149); ");
   m.innerHTML = minute[1];
   s.innerText="00"
 });
@@ -61,13 +75,15 @@ LBbtn.addEventListener("click", () => {
   stopInterval()
   currentScreen = "long_break";
   clickSound2()
+    pdesEl.innerHTML = pdes[2];
+  titleEl.innerHTML = pdes[2];
   containEl.setAttribute("style", "background :rgb(69, 124, 163); ");
-  pdesEl.innerHTML = pdes[2];
   startBtn.setAttribute("style", "color :rgb(69, 124, 163); ");
   stopBtn.setAttribute("style", "color :rgb(69, 124, 163); ");
   resetBtn.setAttribute("style", "color :rgb(69, 124, 163); ");
-  // deleteEl.setAttribute('style', 'color :rgb(69, 124, 163); ')
-  m.innerHTML = minute[2];
+  openSidebar.setAttribute("style", "color :rgb(69, 124, 163); ");
+  closeSidebar.setAttribute("style", "color :rgb(69, 124, 163); ");
+  m.innerHTML=minute[2]
   s.innerText="00"
 });
 
@@ -79,7 +95,7 @@ startBtn.addEventListener("click", () => {
   if (startTimer === undefined) {
     startTimer = setInterval(timer, 1000);
   } else {
-    alert("timer already started");
+    alert("timer already started or click reset");
   }
   clickSound1()
 });
@@ -219,10 +235,7 @@ btnaddEl.addEventListener("click", () => {
 renderTodos(todos);
 liTodos();
 
-const loginBtnSwitchPage = document.getElementById("login-btn");
-loginBtnSwitchPage.addEventListener("click", () => {
-  window.location.href = "/pomodoro/html/login.html";
-});
+
 
 // music
 // const playbtn = document.getElementById("play-btn");
@@ -304,7 +317,7 @@ function next_song() {
 // previous song 
 function previous_song() {
   if (index_no > 0) {
-    index_no-=1;
+    index_no--;
     loadTrack(index_no);
     playsong()
   } else {
@@ -345,3 +358,41 @@ button_background_night.addEventListener('click', () => {
   // icon_bg_el.style.background = 'rgba(255, 255, 255, 0.1)'
   //  icon_bg_el.style.backgroundSize ='50% left';
 })
+
+// phần modal
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-modal-close]')
+const overlay = document.getElementById('overlay')
+
+openModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = document.querySelector(button.dataset.modalTarget)
+    openModal(modal);
+  })
+})
+
+overlay.addEventListener('click', () => {
+  const modals = document.querySelectorAll('.modal.active')
+  modals.forEach(modal => {
+    closeModal(modal);
+  })
+})
+
+closeModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = button.closest('.modal')
+    closeModal(modal);
+  })
+})
+
+
+function openModal(modal) {
+  if (modal == null) return
+    modal.classList.add('active');
+    overlay.classList.add('active')
+}
+function closeModal(modal) {
+  if (modal == null) return
+    modal.classList.remove('active');
+    overlay.classList.remove('active')
+}
